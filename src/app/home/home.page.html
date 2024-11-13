@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <!--Titulo central del producto -->
+    <ion-title> productos </ion-title>
+
+    <!-- Carrito al lado derecho -->
+    <ion-buttons slot="end">
+      <!-- permite navegar a la ruta /carrito o al que te encuentres-->
+      <ion-button routerLink="/carrito">
+        <ion-icon name="cart-outline"></ion-icon>
+        <!-- Muestra el número de productos en el carrito -->
+        <ion-badge>{{cartCount}}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <!-- 
+        *ngFor="let product of products" 
+        - Directiva de Angular para iterar sobre el array 'products'
+        - Por cada elemento en products, crea una variable 'product'
+        - Ejemplo: si products = [{name: 'Traje', price: 100}, {name: 'Polo', price: 50}]
+        - Creará dos tarjetas, una para cada producto
+    -->
+      <ion-card *ngFor="let product of productos">
+        <ion-card-content>
+          <ion-button expand="block" (click)="addToCart(product)">Añadir al carrito</ion-button>
+        </ion-card-content>
+      </ion-card>
+  </div>
+</ion-content>

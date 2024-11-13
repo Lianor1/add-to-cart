@@ -1,0 +1,7 @@
+{
+  "name": "expofinal",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- Inyectamos el servicio de carrito en el constructor -->
+<ion-content>
+  <ion-list>
+    <!-- Lista de productos en el carrito -->
+    <!-- Recorremos el array de productos en el carrito -->
+    <ion-item *ngFor="let item of cartItems">
+      <!-- Id del producto -->
+      <ion-label>{{ item.id}}</ion-label>
+      <!-- Nombre del producto -->
+      <ion-label>{{ item.name }}</ion-label>
+      <!-- Precio del producto -->
+      <ion-label>S/ {{ item.price }}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
